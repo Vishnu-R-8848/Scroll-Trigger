@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Trigger</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100vh;
+        width: 100vw;
+        background: #121111;
+        overflow-x: hidden;
+      }
+      html::-webkit-scrollbar,
+      body::-webkit-scrollbar {
+        display: none;
+      }
+      html {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <h1 class="text-7xl text-white fixed top-3.5 text-center w-full">
+      Scroll Trigger
+    </h1>
+
+    <main
+      class="w-full text-white flex flex-col gap-4 items-center pt-[15vh] text-center pb-5"
+    >
+      <!-- Card 1 -->
+      <div
+        class="card card-1 sticky top-[15vh] flex flex-col gap-4 items-center bg-[#2e251e] w-[35vh] px-7 py-[15vh] rounded-lg"
+      >
+        <img class="w-[150px] aspect-square" src="./imgs/1.png" alt="" />
+        <h2 class="text-4xl font-thin">
+          The <br />
+          <span class="font-bold">Algorithm</span>
+        </h2>
+        <p>
+          Every powerful system begins with logic. An algorithm is the silent
+          brain that transforms ideas into clear, executable steps.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="card card-2 sticky top-[15vh] flex flex-col gap-4 items-center bg-[#2e251e] w-[35vh] px-7 py-[15vh] rounded-lg"
+      >
+        <img class="w-[150px] aspect-square" src="./imgs/2.png" alt="" />
+        <h2 class="text-4xl font-thin">
+          The <br />
+          <span class="font-bold">Algorithm</span>
+        </h2>
+        <p>
+          Step by step, algorithms break complex problems into simple decisions,
+          making solutions easier to understand and implement.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="card card-3 sticky top-[15vh] flex flex-col gap-4 items-center bg-[#2e251e] w-[35vh] px-7 py-[15vh] rounded-lg"
+      >
+        <img class="w-[150px] aspect-square" src="./imgs/3.png" alt="" />
+        <h2 class="text-4xl font-thin">
+          The <br />
+          <span class="font-bold">Algorithm</span>
+        </h2>
+        <p>
+          Efficiency defines performance. A good algorithm saves time, reduces
+          effort, and delivers faster results with precision.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div
+        class="card card-4 sticky top-[15vh] flex flex-col gap-4 items-center bg-[#2e251e] w-[35vh] px-7 py-[15vh] rounded-lg"
+      >
+        <img class="w-[150px] aspect-square" src="./imgs/4.png" alt="" />
+        <h2 class="text-4xl font-thin">
+          The <br />
+          <span class="font-bold">Algorithm</span>
+        </h2>
+        <p>
+          Patterns unlock intelligence. Algorithms recognize repetition and turn
+          it into predictable, optimized outcomes.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div
+        class="card card-5 sticky top-[15vh] flex flex-col gap-4 items-center bg-[#2e251e] w-[35vh] px-7 py-[15vh] rounded-lg"
+      >
+        <img class="w-[150px] aspect-square" src="./imgs/5.png" alt="" />
+        <h2 class="text-4xl font-thin">
+          The <br />
+          <span class="font-bold">Algorithm</span>
+        </h2>
+        <p>
+          Behind every smooth app experience, algorithms silently sort, search,
+          and decide in real time.
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div
+        class="card card-6 sticky top-[15vh] flex flex-col gap-4 items-center bg-[#2e251e] w-[35vh] px-7 py-[15vh] rounded-lg"
+      >
+        <img class="w-[150px] aspect-square" src="./imgs/6.png" alt="" />
+        <h2 class="text-4xl font-thin">
+          The <br />
+          <span class="font-bold">Algorithm</span>
+        </h2>
+        <p>
+          From basic logic to advanced systems, algorithms shape the digital
+          world we interact with every day.
+        </p>
+      </div>
+    </main>
+
+    <!-- GSAP -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ScrollTrigger -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      document.querySelectorAll(".card").forEach((card) => {
+        gsap.to(card, {
+          scale: 0.7,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 15%",
+            end: "bottom 15%",
+            scrub: true,
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
